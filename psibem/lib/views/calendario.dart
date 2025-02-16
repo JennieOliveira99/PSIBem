@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import 'package:mood_tracker/views/grafico.dart';
 class Calendario extends StatefulWidget {
   const Calendario({super.key});
 
@@ -46,7 +45,7 @@ class _CalendarioState extends State<Calendario> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF6F9FC),
+      backgroundColor: const Color(0xFFF6F9FC),
       body: Column(
         children: [
          
@@ -57,7 +56,7 @@ class _CalendarioState extends State<Calendario> {
                 decoration: BoxDecoration(
                   color: Colors.white, 
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10,
@@ -93,14 +92,14 @@ class _CalendarioState extends State<Calendario> {
                         return Center(
                           child: Text(
                             mood.split(' ')[0],
-                            style: TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 20),
                           ),
                         );
                       }
                       return Center(
                         child: Text(
                           day.day.toString(),
-                          style: TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 20),
                         ),
                       );
                     },
@@ -115,7 +114,7 @@ class _CalendarioState extends State<Calendario> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: IconButton(
-                icon: Icon(Icons.bar_chart, size: 40, color: Color(0xFF81C7C6)),
+                icon: const Icon(Icons.bar_chart, size: 40, color: Color(0xFF81C7C6)),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -130,7 +129,7 @@ class _CalendarioState extends State<Calendario> {
      
       bottomNavigationBar: Container(
         height: 100,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF81C7C6),
         ),
         child: Row(
@@ -156,7 +155,7 @@ class _CalendarioState extends State<Calendario> {
           Container(
             width: 67,
             height: 67,
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: _selectedIndex == index ? Colors.white.withOpacity(0.2) : Colors.transparent,
               borderRadius: BorderRadius.circular(10),
@@ -167,10 +166,10 @@ class _CalendarioState extends State<Calendario> {
               color: Colors.white,
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 12,
             ),
@@ -186,10 +185,10 @@ class _CalendarioState extends State<Calendario> {
       builder: (context) {
         String? selectedMood;
         return AlertDialog(
-          title: Text('Selecionar Emoção'),
+          title: const Text('Selecionar Emoção'),
           content: DropdownButton<String>(
             value: selectedMood,
-            hint: Text('Escolha seu mood'),
+            hint: const Text('Escolha seu mood'),
             onChanged: (String? newValue) {
               setState(() {
                 selectedMood = newValue;
@@ -219,15 +218,17 @@ class _CalendarioState extends State<Calendario> {
 
 
 class RespirePage extends StatelessWidget {
+  const RespirePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Respire'),
-        backgroundColor: Color(0xFF81C7C6),
+        title: const Text('Respire'),
+        backgroundColor: const Color(0xFF81C7C6),
       ),
-      backgroundColor: Color(0xFFF6F9FC),
-      body: Center(
+      backgroundColor: const Color(0xFFF6F9FC),
+      body: const Center(
         child: Text('Página Respire'),
       ),
     );
@@ -235,15 +236,17 @@ class RespirePage extends StatelessWidget {
 }
 
 class PsicologosPage extends StatelessWidget {
+  const PsicologosPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Psicólogos'),
-        backgroundColor: Color(0xFF81C7C6),
+        title: const Text('Psicólogos'),
+        backgroundColor: const Color(0xFF81C7C6),
       ),
-      backgroundColor: Color(0xFFF6F9FC),
-      body: Center(
+      backgroundColor: const Color(0xFFF6F9FC),
+      body: const Center(
         child: Text('Página Psicólogos'),
       ),
     );
@@ -251,15 +254,17 @@ class PsicologosPage extends StatelessWidget {
 }
 
 class MeuPerfilPage extends StatelessWidget {
+  const MeuPerfilPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meu Perfil'),
-        backgroundColor: Color(0xFF81C7C6),
+        title: const Text('Meu Perfil'),
+        backgroundColor: const Color(0xFF81C7C6),
       ),
-      backgroundColor: Color(0xFFF6F9FC),
-      body: Center(
+      backgroundColor: const Color(0xFFF6F9FC),
+      body: const Center(
         child: Text('Página Meu Perfil'),
       ),
     );
@@ -267,15 +272,17 @@ class MeuPerfilPage extends StatelessWidget {
 }
 
 class GraficoPage extends StatelessWidget {
+  const GraficoPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gráfico das Emoções'),
-        backgroundColor: Color(0xFF81C7C6),
+        title: const Text('Gráfico das Emoções'),
+        backgroundColor: const Color(0xFF81C7C6),
       ),
-      backgroundColor: Color(0xFFF6F9FC),
-      body: Center(
+      backgroundColor: const Color(0xFFF6F9FC),
+      body: const Center(
         child: Text('Gráfico das Emoções'),
       ),
     );

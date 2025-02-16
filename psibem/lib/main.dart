@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/views/calendario.dart'; 
+import 'package:psibem/views/calendario.dart'; 
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -29,11 +33,11 @@ class _MainPageState extends State<MainPage> {
 
   
   static final List<Widget> _pages = [
-    Center(child: Text('Para Você')),
-    Center(child: Text('emoções')), 
-    Center(child: Text('Respire')),
-    Center(child: Text('Psicólogos')),
-    Center(child: Text('Meu Perfil')),
+    const Center(child: Text('Para Você')),
+    const Center(child: Text('emoções')), 
+    const Center(child: Text('Respire')),
+    const Center(child: Text('Psicólogos')),
+    const Center(child: Text('Meu Perfil')),
   ];
 
   void _onItemTapped(int index) {
@@ -48,7 +52,7 @@ class _MainPageState extends State<MainPage> {
       body: _pages[_selectedIndex], 
       bottomNavigationBar: Container(
         height: 100,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF81C7C6), 
         ),
         child: Row(
@@ -87,7 +91,7 @@ class _MainPageState extends State<MainPage> {
           Container(
             width: 67, 
             height: 67, 
-            padding: EdgeInsets.all(8), 
+            padding: const EdgeInsets.all(8), 
             decoration: BoxDecoration(
               color: _selectedIndex == index ? Colors.white.withOpacity(0.2) : Colors.transparent,
               borderRadius: BorderRadius.circular(10),
@@ -98,10 +102,10 @@ class _MainPageState extends State<MainPage> {
               color: Colors.white, 
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 12,
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:mood_tracker/views/calendario.dart';
+import 'package:psibem/views/calendario.dart';
 
 class GraficoPage extends StatefulWidget {
   final Map<DateTime, String> moods; 
@@ -16,18 +16,18 @@ class _GraficoPageState extends State<GraficoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF6F9FC),
+      backgroundColor: const Color(0xFFF6F9FC),
       body: Column(
         children: [
           
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black12,
                     blurRadius: 10,
@@ -48,7 +48,7 @@ class _GraficoPageState extends State<GraficoPage> {
                     child: Text(value),
                   );
                 }).toList(),
-                underline: SizedBox(), 
+                underline: const SizedBox(), 
                 isExpanded: true,
               ),
             ),
@@ -61,7 +61,7 @@ class _GraficoPageState extends State<GraficoPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10,
@@ -99,7 +99,7 @@ class _GraficoPageState extends State<GraficoPage> {
      
       bottomNavigationBar: Container(
         height: 100,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF81C7C6),
         ),
         child: Row(
@@ -135,7 +135,7 @@ class _GraficoPageState extends State<GraficoPage> {
       barRods: [
         BarChartRodData(
           toY: entry.value.toDouble(),
-          color: emotionColors[entry.key] ?? Color(0xFF81C7C6),
+          color: emotionColors[entry.key] ?? const Color(0xFF81C7C6),
         ),
       ],
     );
@@ -161,7 +161,7 @@ class _GraficoPageState extends State<GraficoPage> {
     final now = DateTime.now();
     switch (_selectedPeriod) {
       case 'Semana':
-        return date.isAfter(now.subtract(Duration(days: 7)));
+        return date.isAfter(now.subtract(const Duration(days: 7)));
       case 'Mês':
         return date.month == now.month && date.year == now.year;
       case 'Ano':
@@ -213,7 +213,7 @@ class _GraficoPageState extends State<GraficoPage> {
           Container(
             width: 67,
             height: 67,
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: index == 1 ? Colors.white.withOpacity(0.2) : Colors.transparent,
               borderRadius: BorderRadius.circular(10),
@@ -224,10 +224,10 @@ class _GraficoPageState extends State<GraficoPage> {
               color: Colors.white,
             ),
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             label,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 12,
             ),
